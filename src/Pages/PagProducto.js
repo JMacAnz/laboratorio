@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import { Button } from 'react-bootstrap';
 import { useLocation } from 'react-router-dom';
 
+
 export default function PagProducto() {
   const location = useLocation();
   const producto = location.state.product; // Obtener el producto de la ubicación

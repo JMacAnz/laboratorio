@@ -9,22 +9,22 @@ export default function PagContato() {
       <Form>
         <Form.Group className="mb-3" controlId="formName">
           <Form.Label>Nombre</Form.Label>
-          <Form.Control type="text" placeholder="Ingresa tu nombre" />
+          <Form.Control type="text" placeholder="Ingresa tu nombre" required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formEmail">
           <Form.Label>Correo electrónico</Form.Label>
-          <Form.Control type="email" placeholder="Ingresa tu correo" />
+          <Form.Control type="email" placeholder="Ingresa tu correo" required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formPhone">
           <Form.Label>Teléfono</Form.Label>
-          <Form.Control type="text" placeholder="Ingresa tu teléfono" />
+          <Form.Control type="text" placeholder="Ingresa tu teléfono" required/>
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formMessage">
           <Form.Label>Mensaje</Form.Label>
-          <Form.Control as="textarea" rows={3} placeholder="Escribe tu mensaje aquí" />
+          <Form.Control as="textarea" rows={3} placeholder="Escribe tu mensaje aquí" required/>
         </Form.Group>
 
         <Button variant="primary" type="submit">
