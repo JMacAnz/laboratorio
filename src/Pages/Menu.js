@@ -8,7 +8,7 @@ export default function Menu() {
       <Navbar bg="dark" data-bs-theme="dark">
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav className="mx-auto">
             <NavLink
               className={({ isActive }) => (isActive ? "nav-link activo" : "nav-link")}
               to='/Inic'
