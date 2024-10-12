@@ -1,15 +1,41 @@
-import React from 'react'
+import React from 'react';
 import { NavLink } from "react-router-dom";
+import { Navbar, Nav } from 'react-bootstrap';
 
 export default function Menu() {
-  return(
+  return (
     <>
-        <nav className="menu">
-            <NavLink className={ ({isActive}) => ( isActive ? "activo" : null) } to='/Inic'>Inicio</NavLink>
-            <NavLink className={ ({isActive}) => ( isActive ? "activo" : null) } to='/Gal'>Galería  </NavLink>
-            <NavLink className={ ({isActive}) => ( isActive ? "activo" : null) } to='/TblPrt'>Producto  </NavLink>
-            <NavLink className={ ({isActive}) => ( isActive ? "activo" : null) } to='/Ctt'>Contacto  </NavLink>
-        </nav>
+      <Navbar bg="dark" data-bs-theme="dark">
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <NavLink
+              className={({ isActive }) => (isActive ? "nav-link activo" : "nav-link")}
+              to='/Inic'
+            >
+              Inicio
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "nav-link activo" : "nav-link")}
+              to='/Gal'
+            >
+              Galería
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "nav-link activo" : "nav-link")}
+              to='/TblPrt'
+            >
+              Producto
+            </NavLink>
+            <NavLink
+              className={({ isActive }) => (isActive ? "nav-link activo" : "nav-link")}
+              to='/Ctt'
+            >
+              Contacto
+            </NavLink>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </>
   );
 }
