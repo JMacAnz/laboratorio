@@ -13,33 +13,33 @@ function CompFooter() {
   );
 
   return (
-    <footer className="footer">
+    <footer className="footer py-4" style={{ backgroundColor: '#333', color: '#fff' }}>
       <Container>
-        <Row className="justify-content-center">
-          <Col className="text-center">
-            <Nav className="social-icons">
-              <OverlayTrigger placement="top" overlay={renderTooltip({ title: 'Facebook' })}>
-                <Nav.Link href="https://facebook.com" target="_blank" rel="noreferrer">
-                  <FontAwesomeIcon icon={faFacebook} size="2x" style={{ color: '#3b5998' }} />
-                </Nav.Link>
-              </OverlayTrigger>
-              <OverlayTrigger placement="top" overlay={renderTooltip({ title: 'Twitter' })}>
-                <Nav.Link href="https://twitter.com" target="_blank" rel="noreferrer">
-                  <FontAwesomeIcon icon={faTwitter} size="2x" style={{ color: '#1DA1F2' }} />
-                </Nav.Link>
-              </OverlayTrigger>
-              <OverlayTrigger placement="top" overlay={renderTooltip({ title: 'Instagram' })}>
-                <Nav.Link href="https://instagram.com" target="_blank" rel="noreferrer">
-                  <FontAwesomeIcon icon={faInstagram} size="2x" style={{ color: '#C13584' }} />
-                </Nav.Link>
-              </OverlayTrigger>
+        <Row className="text-center text-md-start align-items-center">
+          {/* Social Icons */}
+          <Col xs={12} md={6} className="mb-3 mb-md-0">
+            <Nav className="justify-content-center justify-content-md-start social-icons">
+              {[
+                { href: "https://facebook.com", icon: faFacebook, color: '#3b5998', title: 'Facebook' },
+                { href: "https://twitter.com", icon: faTwitter, color: '#1DA1F2', title: 'Twitter' },
+                { href: "https://instagram.com", icon: faInstagram, color: '#C13584', title: 'Instagram' },
+              ].map(({ href, icon, color, title }, index) => (
+                <OverlayTrigger key={index} placement="top" overlay={renderTooltip({ title })}>
+                  <Nav.Link href={href} target="_blank" rel="noreferrer" className="mx-2">
+                    <FontAwesomeIcon icon={icon} size="2x" style={{ color }} />
+                  </Nav.Link>
+                </OverlayTrigger>
+              ))}
               <OverlayTrigger placement="top" overlay={renderTooltip({ title: 'Contacto' })}>
-                <Nav.Link as={NavLink} to="/Ctt">
-                  <FontAwesomeIcon icon={faEnvelope} size="2x" style={{ color: 'White' }} />                  
+                <Nav.Link as={NavLink} to="/Ctt" className="mx-2">
+                  <FontAwesomeIcon icon={faEnvelope} size="2x" style={{ color: '#fff' }} />
                 </Nav.Link>
               </OverlayTrigger>
             </Nav>
-            <p>Dirección: Calle Falsa 123, Bogotá, Colombia</p>
+          </Col>
+          {/* Contact Information */}
+          <Col xs={12} md={6} className="text-center text-md-end">
+            <p className="mb-1">Dirección: Calle Falsa 123, Bogotá, Colombia</p>
             <p>Teléfono: +57 123 456 7890</p>
           </Col>
         </Row>

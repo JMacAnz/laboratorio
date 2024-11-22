@@ -22,8 +22,9 @@ export default function CompListaProductos() {
 
   return (
     <>
-      <div>
-        <Table striped bordered hover className='w-75 m-auto' >
+      <div className="table-responsive-wrapper">
+      <Table striped bordered hover className="w-100 m-auto">
+
           <thead>
             <tr>
               <th>ID</th>
@@ -38,9 +39,9 @@ export default function CompListaProductos() {
             {regPorPag.map((product) => (
               <tr key={product.id}>
                 <td>{product.id}</td>
-                <td>{product.title}</td>
+                <td className="truncate-text">{product.title}</td>
                 <td>{product.price}</td>
-                <td>{product.description}</td>
+                <td >{product.description}</td>
                 <td>{product.category}</td>
                 {/* <td>
                 {product.image.map((image, index) => (

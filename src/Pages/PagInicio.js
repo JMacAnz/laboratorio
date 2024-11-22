@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
-import CompProducto from '../Componentes/CompProducto'; // Componente que ya tienes para mostrar un producto
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import axios from "axios";
+import CompPaseo from "../Componentes/CompPaseo"; // 
+import { iAX } from "../ConfigAXIOS"; 
 import { useDispatch, useSelector } from "react-redux";
 import { setInfoProductos } from "../Reducers/reducers";
 
@@ -16,7 +13,7 @@ export default function PagInicio() {
   useEffect(() => {
     async function getData() {
         try {
-            const response = await axios.get("https://fakestoreapi.com/products");
+            const response = await iAX.get("https://fakestoreapi.com/products");
             if (response.status !== 200) {
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
@@ -34,21 +31,12 @@ export default function PagInicio() {
 
   return (
     <div className="inicio-container">
-      <h1>Productos Destacados</h1>
+      <h1>Crea el paseo de hoy!</h1>
       <p>
-        Estos son algunos de nuestros productos más populares. ¡Descubre más en la galería!
+        {/* Estos son algunos de nuestros productos más populares. ¡Descubre más en la galería! */}
       </p>
 
-      {/* Mostrar los primeros 5 productos */}
-      <Container>
-        <Row>
-          {productosInicio && productosInicio.map(producto => (
-            <Col md={3} key={producto.id} style={{ marginBottom: '20px' }}>
-              <CompProducto {...producto} /> {/* Usamos el componente de producto */}
-            </Col>
-          ))}
-        </Row>
-      </Container>
+      <CompPaseo/>
     </div>
   );
 }

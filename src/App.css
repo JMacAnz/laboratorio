@@ -1,22 +1,41 @@
-a {
-  text-decoration: none;
-  color: white ;
-  background-color: rgb(79, 202, 130);
-  padding: 5px 10px;
-  font-size: 15px;
+/*Fuente para el texto del icono*/
+.nav-brand {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  font-size: 1.1rem;
 }
 
-.activo {
-  color: yellow;
-  background-color: blue;
+.brand-text {
+  font-family: 'Dancing Script', cursive;
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 1px; /* Opcional: ajusta el espaciado entre letras */
+  color: #f8f9fa; /* Puedes elegir el color que prefieras */
 }
 
-.celda {
-  border: 1px solid red;
+
+/*Estilos para la tabla*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+.truncate-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px; /* Ajusta según el tamaño deseado */
+}
+.table-responsive-wrapper {
+  overflow-x: auto;
 }
 
-/* App.css */
-/* App.css */
+.table-responsive-wrapper table {
+  max-width: 100%;
+}
+
+
+/* Footer */
 .footer {
   display: flex;
   flex-direction: column;
@@ -49,7 +68,7 @@ a {
 
 
 
-/* App.css */
+/* Menu */
 .menu {
   display: flex;
   justify-content: center;
@@ -91,4 +110,31 @@ a {
 
 .card-body {
   text-align: left;
+}
+
+
+/* Asegúrate de que el body y el html tengan altura del 100% */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* El contenedor principal ocupará toda la altura de la ventana */
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* El contenido de la página debe crecer para llenar el espacio disponible */
+.main-content {
+  flex: 1;  /* Esto hace que el contenido ocupe el espacio restante */
+  padding: 20px;
+}
+
+/* Estilo del footer */
+footer {
+  margin-top: auto; /* Asegura que el footer se quede al final */
+  padding: 10px;
+  background-color: #f1f1f1;
 }
